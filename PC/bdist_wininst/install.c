@@ -1184,7 +1184,7 @@ static void CenterWindow(HWND hwnd)
 
 #include <prsht.h>
 
-BOOL CALLBACK
+INT_PTR CALLBACK
 IntroDlgProc(HWND hwnd, UINT msg, WPARAM wParam, LPARAM lParam)
 {
     LPNMHDR lpnm;
@@ -1533,7 +1533,7 @@ SCHEME *GetScheme(int major, int minor)
     return old_scheme;
 }
 
-BOOL CALLBACK
+INT_PTR CALLBACK
 SelectPythonDlgProc(HWND hwnd, UINT msg, WPARAM wParam, LPARAM lParam)
 {
     LPNMHDR lpnm;
@@ -1835,7 +1835,7 @@ static void CloseLogfile(void)
         fclose(logfile);
 }
 
-BOOL CALLBACK
+INT_PTR CALLBACK
 InstallFilesDlgProc(HWND hwnd, UINT msg, WPARAM wParam, LPARAM lParam)
 {
     LPNMHDR lpnm;
@@ -1990,7 +1990,7 @@ InstallFilesDlgProc(HWND hwnd, UINT msg, WPARAM wParam, LPARAM lParam)
 }
 
 
-BOOL CALLBACK
+INT_PTR CALLBACK
 FinishedDlgProc(HWND hwnd, UINT msg, WPARAM wParam, LPARAM lParam)
 {
     LPNMHDR lpnm;
@@ -2166,23 +2166,6 @@ BOOL NeedAutoUAC()
     return TRUE;
 }
 
-// Returns TRUE if the platform supports UAC.
-BOOL PlatformSupportsUAC()
-{
-    // Note that win2k does seem to support ShellExecute with 'runas',
-    // but does *not* support IsUserAnAdmin - so we just pretend things
-    // only work on XP and later.
-    BOOL bIsWindowsXPorLater;
-    OSVERSIONINFO winverinfo;
-    winverinfo.dwOSVersionInfoSize = sizeof(winverinfo);
-    if (!GetVersionEx(&winverinfo))
-        return FALSE; // something bad has gone wrong
-    bIsWindowsXPorLater =
-       ( (winverinfo.dwMajorVersion > 5) ||
-       ( (winverinfo.dwMajorVersion == 5) && (winverinfo.dwMinorVersion >= 1) ));
-    return bIsWindowsXPorLater;
-}
-
 // Spawn ourself as an elevated application.  On failure, a message is
 // displayed to the user - but this app will always terminate, even
 // on error.
@@ -2238,7 +2221,7 @@ int DoInstall(void)
 
     // See if we need to do the Vista UAC magic.
     if (strcmp(user_access_control, "force")==0) {
-        if (PlatformSupportsUAC() && !MyIsUserAnAdmin()) {
+        if (!MyIsUserAnAdmin()) {
             SpawnUAC();
             return 0;
         }
@@ -2246,7 +2229,7 @@ int DoInstall(void)
     } else if (strcmp(user_access_control, "auto")==0) {
         // Check if it looks like we need UAC control, based
         // on how Python itself was installed.
-        if (PlatformSupportsUAC() && !MyIsUserAnAdmin() && NeedAutoUAC()) {
+        if (!MyIsUserAnAdmin() && NeedAutoUAC()) {
             SpawnUAC();
             return 0;
         }
