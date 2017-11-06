@@ -39,7 +39,7 @@
 #include "constants.h"
 #include "memory.h"
 #include "typearith.h"
-#include "io.h"
+#include "mpio.h"
 
 
 /* This file contains functions for decimal <-> string conversions, including
