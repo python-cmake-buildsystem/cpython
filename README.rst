@@ -30,6 +30,15 @@ Available branches
 
   * Support for VS2010 and VS2015
 
+* `3.5.3-patches <https://github.com/python/cpython/compare/3.5...python-cmake-buildsystem:3.5.3-patches>`_:
+
+  * Rename header files found in ``Modules/_decimal/libmpdec`` directory to avoid conflicts with system headers
+    of the same name (``io.h`` and ``memory.h``). This script was originally used to update the sources: https://gist.github.com/jcfr/e166c0f3fd823de2586b1101f9c67947
+
+  * Prevent duplicated ``OverlappedType`` symbols with built-in extension on Windows.
+
+  * Export inlined functions to support extension built-in on Windows.
+
 
 License
 -------
