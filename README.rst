@@ -26,6 +26,14 @@ That said, there are few scenarios where maintaining CPython patches is relevant
 Available branches
 ------------------
 
+* `2.7.3-patches <https://github.com/python/cpython/compare/2.7...python-cmake-buildsystem:2.7.3-patches>`_:
+
+  * Fix build with GNU readline >= 6.3. - Apply to 2.7.3 and 2.7.4
+
+* `2.7.5-patches <https://github.com/python/cpython/compare/2.7...python-cmake-buildsystem:2.7.5-patches>`_:
+
+  * Fix build with GNU readline >= 6.3. - Apply to 2.7.5 and 2.7.6
+
 * `2.7.13-patches <https://github.com/python/cpython/compare/2.7...python-cmake-buildsystem:2.7.13-patches>`_:
 
   * Support for VS2010 and VS2015
