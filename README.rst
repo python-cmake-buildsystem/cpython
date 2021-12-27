@@ -36,7 +36,11 @@ Available branches
 
 * `2.7.13-patches <https://github.com/python/cpython/compare/2.7...python-cmake-buildsystem:2.7.13-patches>`_:
 
-  * Support for VS2010 and VS2015. - Apply to 2.7.14 and 2.7.15. See `PythonApplyPatches.cmake <https://github.com/python-cmake-buildsystem/python-cmake-buildsystem/blob/master/cmake/PythonApplyPatches.cmake>`_
+  * Support for VS2010 and VS2015. - Apply to 2.7.11, 2.7.12 and 2.7.14. See `PythonApplyPatches.cmake <https://github.com/python-cmake-buildsystem/python-cmake-buildsystem/blob/master/cmake/PythonApplyPatches.cmake>`_
+
+* `2.7.15-patches <https://github.com/python/cpython/compare/2.7...python-cmake-buildsystem:2.7.15-patches>`_:
+
+  * Support for VS2010 and VS2015.
 
 * `3.5.3-patches <https://github.com/python/cpython/compare/3.5...python-cmake-buildsystem:3.5.3-patches>`_:
 
