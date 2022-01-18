@@ -25,24 +25,6 @@ const struct filedescr _PyImport_DynLoadFiletab[] = {
 };
 
 
-/* Case insensitive string compare, to avoid any dependencies on particular
-   C RTL implementations */
-
-static int strcasecmp (char *string1, char *string2)
-{
-    int first, second;
-
-    do {
-        first  = tolower(*string1);
-        second = tolower(*string2);
-        string1++;
-        string2++;
-    } while (first && first == second);
-
-    return (first - second);
-}
-
-
 /* Function to return the name of the "python" DLL that the supplied module
    directly imports.  Looks through the list of imported modules and
    returns the first entry that starts with "python" (case sensitive) and
@@ -186,6 +168,7 @@ dl_funcptr _PyImport_GetDynLoadFunc(const char *fqname, const char *shortname,
         /* Don't display a message box when Python can't load a DLL */
         old_mode = SetErrorMode(SEM_FAILCRITICALERRORS);
 
+#ifdef Py_ENABLE_SHARED
         if (GetFullPathName(pathname,
                             sizeof(pathbuf),
                             pathbuf,
@@ -196,6 +179,7 @@ dl_funcptr _PyImport_GetDynLoadFunc(const char *fqname, const char *shortname,
                                  LOAD_WITH_ALTERED_SEARCH_PATH);
             _Py_DeactivateActCtx(cookie);
         }
+#endif // Py_ENABLE_SHARED
 
         /* restore old error mode settings */
         SetErrorMode(old_mode);
