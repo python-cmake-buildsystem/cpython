@@ -28,19 +28,29 @@ Available branches
 
 * `2.7.3-patches <https://github.com/python/cpython/compare/2.7...python-cmake-buildsystem:2.7.3-patches>`_:
 
-  * Fix build with GNU readline >= 6.3. - Apply to 2.7.3 and 2.7.4
+  * Fix build with GNU readline >= 6.3.
+  * Support for MinGW (building ``socket`` and ``ctypes`` modules is not supported).
+
+  *Apply to 2.7.3 and 2.7.4*
 
 * `2.7.5-patches <https://github.com/python/cpython/compare/2.7...python-cmake-buildsystem:2.7.5-patches>`_:
 
-  * Fix build with GNU readline >= 6.3. - Apply to 2.7.5 and 2.7.6
+  * Fix build with GNU readline >= 6.3.
+  * Support for MinGW (building ``socket`` and ``ctypes`` modules is not supported).
+
+  *Apply to 2.7.5 and 2.7.6*
 
 * `2.7.13-patches <https://github.com/python/cpython/compare/2.7...python-cmake-buildsystem:2.7.13-patches>`_:
 
-  * Support for VS2010 and VS2015. - Apply to 2.7.11, 2.7.12 and 2.7.14. See `PythonApplyPatches.cmake <https://github.com/python-cmake-buildsystem/python-cmake-buildsystem/blob/master/cmake/PythonApplyPatches.cmake>`_
+  * Support for VS2010 and VS2015.
+  * Support for MinGW (building ``socket`` and ``ctypes`` modules is not supported).
+
+  *Apply to 2.7.11, 2.7.12 and 2.7.14*
 
 * `2.7.15-patches <https://github.com/python/cpython/compare/2.7...python-cmake-buildsystem:2.7.15-patches>`_:
 
   * Support for VS2010 and VS2015.
+  * Support for MinGW (building ``socket`` and ``ctypes`` modules is not supported).
 
 * `3.5.3-patches <https://github.com/python/cpython/compare/3.5...python-cmake-buildsystem:3.5.3-patches>`_:
 
@@ -76,4 +86,13 @@ contribute my code to the PSF
 mentions that if code is going to end up in Python or the standard library,
 the PSF will require you to license code under "Academic Free License" or
 "Apache License 2.0".
+
+How are the patches applied ?
+.............................
+
+Patches associated with a given branches are generated using the ``git format-patch`` command and
+added to the relevant sub-directories of the ``python-cmake-buildsystem`` project. These are then
+automatically applied are configuration time using the `PythonApplyPatches <https://github.com/python-cmake-buildsystem/python-cmake-buildsystem/blob/master/cmake/PythonApplyPatches.cmake>`_ CMake module.
+
+Read more details at `python-cmake-buildsystem/patches/README.rst <https://github.com/python-cmake-buildsystem/python-cmake-buildsystem/tree/master/patches>`_.
 
