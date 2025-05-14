@@ -76,6 +76,9 @@ main(int argc, char **argv)
     // add current script dir to sys.path
     config.isolated = 0;
     config.safe_path = 0;
+#ifdef MS_WINDOWS
+    config.site_import = 0;
+#endif
 
 #ifdef MS_WINDOWS
     status = PyConfig_SetArgv(&config, argc, argv);
