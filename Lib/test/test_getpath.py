@@ -304,7 +304,7 @@ class MockGetPathTests(unittest.TestCase):
         ns.add_known_xfile("/home/cpython/python")
         ns.add_known_xfile("/usr/local/bin/python")
         ns.add_known_file("/home/cpython/pybuilddir.txt", ["build/lib.linux-x86_64-9.8"])
-        ns.add_known_file("/home/cpython/Lib/os.py")
+        ns.add_known_file("/home/cpython/lib/python9.8/os.py")
         ns.add_known_dir("/home/cpython/lib-dynload")
         expected = dict(
             executable="/home/cpython/python",
@@ -316,7 +316,7 @@ class MockGetPathTests(unittest.TestCase):
             module_search_paths_set=1,
             module_search_paths=[
                 "/usr/local/lib/python98.zip",
-                "/home/cpython/Lib",
+                "/home/cpython/lib/python9.8",
                 "/home/cpython/build/lib.linux-x86_64-9.8",
             ],
         )
@@ -492,7 +492,7 @@ class MockGetPathTests(unittest.TestCase):
         ns.add_known_link("/linkfrom/python", "/home/cpython/python")
         ns.add_known_xfile("/usr/local/bin/python")
         ns.add_known_file("/home/cpython/pybuilddir.txt", ["build/lib.linux-x86_64-9.8"])
-        ns.add_known_file("/home/cpython/Lib/os.py")
+        ns.add_known_file("/home/cpython/lib/python9.8/os.py")
         ns.add_known_dir("/home/cpython/lib-dynload")
         expected = dict(
             executable="/linkfrom/python",
@@ -504,7 +504,7 @@ class MockGetPathTests(unittest.TestCase):
             module_search_paths_set=1,
             module_search_paths=[
                 "/usr/local/lib/python98.zip",
-                "/home/cpython/Lib",
+                "/home/cpython/lib/python9.8",
                 "/home/cpython/build/lib.linux-x86_64-9.8",
             ],
         )
@@ -799,7 +799,7 @@ class MockGetPathTests(unittest.TestCase):
         ns.add_known_link("/linkfrom/python", "/home/cpython/python")
         ns.add_known_xfile("/usr/local/bin/python")
         ns.add_known_file("/home/cpython/pybuilddir.txt", ["build/lib.macos-9.8"])
-        ns.add_known_file("/home/cpython/Lib/os.py")
+        ns.add_known_file("/home/cpython/lib/python9.8/os.py")
         ns.add_known_dir("/home/cpython/lib-dynload")
         expected = dict(
             executable="/linkfrom/python",
@@ -811,7 +811,7 @@ class MockGetPathTests(unittest.TestCase):
             module_search_paths_set=1,
             module_search_paths=[
                 "/usr/local/lib/python98.zip",
-                "/home/cpython/Lib",
+                "/home/cpython/lib/python9.8",
                 "/home/cpython/build/lib.macos-9.8",
             ],
         )
