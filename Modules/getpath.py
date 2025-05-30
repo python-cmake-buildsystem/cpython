@@ -180,7 +180,7 @@ if os_name == 'posix' or os_name == 'darwin':
     STDLIB_SUBDIR = f'{platlibdir}/python{VERSION_MAJOR}.{VERSION_MINOR}'
     STDLIB_LANDMARKS = [f'{STDLIB_SUBDIR}/os.py', f'{STDLIB_SUBDIR}/os.pyc']
     PLATSTDLIB_LANDMARK = f'{platlibdir}/python{VERSION_MAJOR}.{VERSION_MINOR}/lib-dynload'
-    BUILDSTDLIB_LANDMARKS = ['Lib/os.py']
+    BUILDSTDLIB_LANDMARKS = [f'lib/python{VERSION_MAJOR}.{VERSION_MINOR}/os.py']
     VENV_LANDMARK = 'pyvenv.cfg'
     ZIP_LANDMARK = f'{platlibdir}/python{VERSION_MAJOR}{VERSION_MINOR}.zip'
     DELIM = ':'
@@ -491,10 +491,14 @@ if ((not home_was_set and real_executable_dir and not py_setpath)
         else:
             build_stdlib_prefix = search_up(build_prefix, *BUILDSTDLIB_LANDMARKS)
         # Always use the build prefix for stdlib
-        if build_stdlib_prefix:
-            stdlib_dir = joinpath(build_stdlib_prefix, 'Lib')
+        if os_name == 'nt':
+            lib = 'Lib'
         else:
-            stdlib_dir = joinpath(build_prefix, 'Lib')
+            lib = f'lib/python{VERSION_MAJOR}.{VERSION_MINOR}'
+        if build_stdlib_prefix:
+            stdlib_dir = joinpath(build_stdlib_prefix, lib)
+        else:
+            stdlib_dir = joinpath(build_prefix, lib)
         # Only use the build prefix for prefix if it hasn't already been set
         if not prefix:
             prefix = build_stdlib_prefix
