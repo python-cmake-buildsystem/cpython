@@ -26,41 +26,6 @@ That said, there are few scenarios where maintaining CPython patches is relevant
 Available branches
 ------------------
 
-* `2.7.3-patches <https://github.com/python/cpython/compare/2.7...python-cmake-buildsystem:2.7.3-patches>`_:
-
-  * Fix build with GNU readline >= 6.3.
-  * Support for MinGW (building ``socket`` and ``ctypes`` modules is not supported).
-
-  *Apply to 2.7.3 and 2.7.4*
-
-* `2.7.5-patches <https://github.com/python/cpython/compare/2.7...python-cmake-buildsystem:2.7.5-patches>`_:
-
-  * Fix build with GNU readline >= 6.3.
-  * Support for MinGW (building ``socket`` and ``ctypes`` modules is not supported).
-
-  *Apply to 2.7.5 and 2.7.6*
-
-* `2.7.13-patches <https://github.com/python/cpython/compare/2.7...python-cmake-buildsystem:2.7.13-patches>`_:
-
-  * Support for VS2010 and VS2015.
-  * Support for MinGW (building ``socket`` and ``ctypes`` modules is not supported).
-
-  *Apply to 2.7.11, 2.7.12 and 2.7.14*
-
-* `2.7.15-patches <https://github.com/python/cpython/compare/2.7...python-cmake-buildsystem:2.7.15-patches>`_:
-
-  * Support for VS2010 and VS2015.
-  * Support for MinGW (building ``socket`` and ``ctypes`` modules is not supported).
-
-* `3.5.3-patches <https://github.com/python/cpython/compare/3.5...python-cmake-buildsystem:3.5.3-patches>`_:
-
-  * Rename header files found in ``Modules/_decimal/libmpdec`` directory to avoid conflicts with system headers
-    of the same name (``io.h`` and ``memory.h``). This script was originally used to update the sources: https://gist.github.com/jcfr/e166c0f3fd823de2586b1101f9c67947. - Apply to 3.5.x
-
-  * Prevent duplicated ``OverlappedType`` symbols with built-in extension on Windows. - Apply to 3.5.x
-
-  * Export inlined functions to support extension built-in on Windows. - Apply to 3.5.x
-
 * `3.6.2-patches <https://github.com/python/cpython/compare/3.6...python-cmake-buildsystem:3.6.2-patches>`_:
 
   * Rename header files found in ``Modules/_decimal/libmpdec`` directory to avoid conflicts with system headers
@@ -69,6 +34,41 @@ Available branches
   * Prevent duplicated ``OverlappedType`` symbols with built-in extension on Windows. - Apply to 3.6.x
 
   * Export inlined functions to support extension built-in on Windows. - Apply to 3.6.x
+  
+* `3.5.3-patches <https://github.com/python/cpython/compare/3.5...python-cmake-buildsystem:3.5.3-patches>`_:
+
+  * Rename header files found in ``Modules/_decimal/libmpdec`` directory to avoid conflicts with system headers
+    of the same name (``io.h`` and ``memory.h``). This script was originally used to update the sources: https://gist.github.com/jcfr/e166c0f3fd823de2586b1101f9c67947. - Apply to 3.5.x
+
+  * Prevent duplicated ``OverlappedType`` symbols with built-in extension on Windows. - Apply to 3.5.x
+
+  * Export inlined functions to support extension built-in on Windows. - Apply to 3.5.x
+  
+* `2.7.15-patches <https://github.com/python/cpython/compare/2.7...python-cmake-buildsystem:2.7.15-patches>`_:
+
+  * Support for VS2010 and VS2015.
+  * Support for MinGW (building ``socket`` and ``ctypes`` modules is not supported).
+
+* `2.7.13-patches <https://github.com/python/cpython/compare/2.7...python-cmake-buildsystem:2.7.13-patches>`_:
+
+  * Support for VS2010 and VS2015.
+  * Support for MinGW (building ``socket`` and ``ctypes`` modules is not supported).
+
+  *Apply to 2.7.11, 2.7.12 and 2.7.14*
+
+* `2.7.5-patches <https://github.com/python/cpython/compare/2.7...python-cmake-buildsystem:2.7.5-patches>`_:
+
+  * Fix build with GNU readline >= 6.3.
+  * Support for MinGW (building ``socket`` and ``ctypes`` modules is not supported).
+
+  *Apply to 2.7.5 and 2.7.6*
+
+* `2.7.3-patches <https://github.com/python/cpython/compare/2.7...python-cmake-buildsystem:2.7.3-patches>`_:
+
+  * Fix build with GNU readline >= 6.3.
+  * Support for MinGW (building ``socket`` and ``ctypes`` modules is not supported).
+
+  *Apply to 2.7.3 and 2.7.4*
 
 
 License
