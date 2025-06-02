@@ -28,6 +28,8 @@ Available branches
 
 * `3.6.2-patches <https://github.com/python/cpython/compare/3.6...python-cmake-buildsystem:3.6.2-patches>`_:
 
+  * Fix Windows build of Python for latest WinSDK. - Apply to 3.6.x
+
   * Rename header files found in ``Modules/_decimal/libmpdec`` directory to avoid conflicts with system headers
     of the same name (``io.h``). This script was originally used to update the sources: https://gist.github.com/jcfr/e166c0f3fd823de2586b1101f9c67947. - Apply to 3.6.x
 
