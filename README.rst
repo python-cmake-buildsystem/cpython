@@ -26,6 +26,24 @@ That said, there are few scenarios where maintaining CPython patches is relevant
 Available branches
 ------------------
 
+* `3.12.0-patches <https://github.com/python/cpython/compare/3.12...python-cmake-buildsystem:3.12.0-patches>`_:
+
+  * _bootstrap_python: Fix execution on windows disabling site import
+  * getpath: Update build directory assumptions based on python-cmake-buildsystem
+
+  *Apply to 3.12.x*
+
+* `3.11.0-patches <https://github.com/python/cpython/compare/3.11...python-cmake-buildsystem:3.11.0-patches>`_:
+
+  * _bootstrap_python: Fix execution on windows disabling site import
+  * getpath: Update build directory assumptions based on python-cmake-buildsystem
+
+  *Apply to 3.11.x*
+
+* `3.6.15-patches <https://github.com/python/cpython/compare/v3.6.15...python-cmake-buildsystem:3.6.15-patches>`_:
+
+  * bpo-35519: Rename ``test.bisect`` to ``test.bisect_cmd``. - Apply to 3.6.15
+
 * `3.6.2-patches <https://github.com/python/cpython/compare/3.6...python-cmake-buildsystem:3.6.2-patches>`_:
 
   * Fix Windows build of Python for latest WinSDK. - Apply to 3.6.x
